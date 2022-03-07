@@ -1,0 +1,56 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+{% for categorie in categories %}
+<div class=" mt-4 mb-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-2">
+                <div class="section-title">
+                    <h2>{{categorie.nom}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for produit in produits %}
+            {% if produit.categorie.nom == categorie.nom %}
+            <div class=" col-lg-4 col-12">
+                
+                    
+                    <div class="single-product">
+                        <div class="product-img">
+                            <a href="{% url 'detail' produit.id %}">
+                                <img class="default-img" src="{{ produit.image.url }}" width="200"  height="100" alt="#">
+                                <img class="hover-img" src="{{ produit.image.url }}" width="200"  height="100" alt="#">
+                                
+                            </a>
+                            
+                        </div>
+                        <a data-product="{{produit.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart mt-4"  ><i class="fa fa-plus" style="color:aliceblue">Add</i></a>
+                        <div class="product-content">
+                            <h3><a href="{% url 'detail' produit.id %}" style="font-size: 20px;">{{produit.nom}}</a></h3>
+                            <div class="product-price" >
+                                
+                                <span style="font-size: 20px;">{{produit.prix_achat}} Fcfa</span>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="product-price">
+                                <span>{{produit.description}} </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                 
+               
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<!--/ End Single Widget -->
+{% endblock %}
