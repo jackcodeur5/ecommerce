@@ -15,30 +15,29 @@
         <div class="tab-single">
             <div class="row">
                 {% for produit in produits %}
-                <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                   
-                    <div class="single-product">
-                        <div class="product-img">
-                            
-                            <a href="{% url 'detail' produit.id %}">
-                                <img class="default-img" src=" {{produit.image.url}}" alt="#">
-                                <img class="hover-img" src=" {{produit.image.url}}" alt="#">
-                            </a>
-                            <div class="button-head">
-                                <div class="product-action-2">
-                                    <a data-product="{{produit.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart" >Acheter</a>
-                                    <a title="apperçu" href="{% url 'detail' produit.id %}"><i class=" ti-eye"></i></a>
+                            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="{% url 'detail' produit.id %}">
+                                            <img class="default-img" src="{{produit.image.url}}" alt="#">
+                                            <img class="hover-img" src="{{produit.image.url}}" alt="#">
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="{% url 'detail' produit.id %}" style="font-size: 20px;">{{produit.nom}}</a></h3>
+                                        <div class="product-price">
+                                            <span style="font-size: 20px; font: weight 10px;">{{produit.prix_achat}} Fcfa</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-price">
+                                            <span>{{produit.description}} </span>
+                                        </div>
+                                    </div>
+                                    <a data-product="{{produit.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart mt-4"  ><i class="fa fa-plus" style="color:aliceblue">Add</i></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-content">
-                            <h3><a href="{% url 'detail' produit.id %}">{{produit.nom}}</a></h3>
-                            <div class="product-price">
-                                <span>{{produit.prix_achat}} Fcfa</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 {% empty %}
                 <h3>Aucun resultat</h3>
             

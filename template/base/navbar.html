@@ -23,7 +23,7 @@
                             <li><i class="ti-location-pin"></i> Lomé - Togo</li>
                             <li><i class="ti-alarm-clock"></i> <a >24h/24</a></li>
                             {% if user.is_authenticated %}
-                            <li><i class="fa  fa-dashboard"></i> <a href="{% url 'users_dashboard_index' %} ">Dashboard</a></li>
+                            <li><i class="fa fa-power-off"></i> <a href="{% url 'quitter' %}">Se déconnecter</a></li>
                             {% else %}
                             <li><i class="ti-user"></i> <a href="{% url 'inscription' %}">Créer un compte</a></li>
                             <li><i class="ti-power-off"></i><a href="{% url 'access' %}">Connexion</a></li>

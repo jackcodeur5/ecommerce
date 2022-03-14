@@ -108,13 +108,13 @@
                     <tbody>
                         {% for livraison in livraisons %}
                         <tr>
-                            <td scope="row">{{livraison.nom_destinataire}}</td>
-                            <td>{{livraison.prenom_destinataire}}</td>
+                            <td scope="row">{{livraison.client.nom}}</td>
+                            <td>{{livraison.client.prenom}}</td>
                             <td>                              
-                                {{livraison.email}}
+                                {{livraison.client.email}}
                             </td>
-                            <td>{{livraison.numero}}</td>
-                            <td>{{livraison.destination}}</td>
+                            <td>{{livraison.client.numero}}</td>
+                            <td>{{livraison.client.quartier}},{{livraison.client.rue}}, No_maison: {{livraison.client.no_de_maison}}</td>
                         </tr>
                      {% endfor %}
                     </tbody>

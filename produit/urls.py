@@ -16,7 +16,9 @@ urlpatterns = [
     path('produits', views.produits, name='produits'),
     path('produits/', views.allProduit),
     path('categorie/<str:pk>/', views.categorie, name="categorie"),
-    path('search', views.search, name="search")
+    path('search', views.search, name="search"),
+    path('recu', views.recu, name="recu"),
+    path('commande', views.commande, name="commande")
     ]
 
 """

@@ -249,6 +249,21 @@ def tester(request):
     context = {"auth_token":auth_token}
     return render(request, 'produit/paiement.html', context)
 
+def recu(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    context = {"cartItems":cartItems, }
+    return render(request, 'produit/recu.html', context)
+
+def commande(request):
+    client = request.user.utilisateur.client
+    id = Commande.objects.latest('id').id
+    commandes = Commande.objects.filter(client=client).exclude(transaction_id=None)
+    context = {"commandes": commandes}
+    return render(request, 'produit/commande.html', context)
+
+
+
 #Création d'utlisateur non connecté
 """else:
             print('User is not autenticate!')
