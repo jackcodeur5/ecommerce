@@ -8,7 +8,7 @@ for(var i=0; i<updateBtns.length; i++){
          var action = this.dataset.action
          addCartItem(productId, action)
          console.log('USER:', user)
-         if(user==='AnonymousUser'){
+         if(user == 'AnonymousUser'){
             addCartItem(productId, action)
          }else{
             updateUserOrder(productId, action)
@@ -31,17 +31,18 @@ $(document).on('click', '.update-cart', function(){
 
 function addCartItem(productId, action){
     console.log('User is not Autenticate!')
+    console.log('User:', user)
     if(action == 'add'){
         if(cart[productId] == undefined){
-            cart[productId] = {'qte_produit': 1/2}
+            cart[productId] = {'qte_produit': 1}
         }else{
-            cart[productId]['qte_produit'] += 1/2
+            cart[productId]['qte_produit'] += 1
 
         }
     }
 
     if(action == 'remove'){
-       cart[productId]['qte_produit'] -= 1/2
+       cart[productId]['qte_produit'] -= 1
        if(cart[productId]['qte_produit'] <= 0){
            console.log("Supprimer produit")
            delete cart[productId]

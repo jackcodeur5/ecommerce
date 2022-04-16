@@ -8,7 +8,7 @@
     }
    
 </style>
-<div class="contenaire-fluid">
+<div class="container">
   <div class="mt-4 mb-4 p-3 bg-white border shadow-sm lh-sm">
     <!--Order Listing-->
     <div class="product-list">
@@ -35,7 +35,7 @@
                     {% for commande in commandes %}
                         
                         <td class="align-middle">
-                           <a href="# " title="voir detail">Commande#{{commande.id}}</a> 
+                           <a href="# " title="voir detail">Commande#{{commande.transaction_id}}</a> 
                         </td>
                         <td class="align-middle">{{commande.etat_commande}}</td>
                         

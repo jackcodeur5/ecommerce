@@ -31,7 +31,8 @@
                             <h3><a href="{% url 'detail' produit.id %}" style="font-size: 20px;">{{produit.nom}}</a></h3>
                             <div class="product-price" >
                                 
-                                <span style="font-size: 20px;">{{produit.prix_achat}} Fcfa</span>
+                                <span style="font-size: 20px;">{{produit.prix_achat}} Fcfa</span><br>
+                                <span class="mt-4" style="font-size: 20px; font: weight 10px; color: rgb(15, 65, 104);">Stock: {{produit.stock}}</span>
                             </div>
                         </div>
                         <div class="product-content">

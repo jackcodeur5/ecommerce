@@ -244,9 +244,11 @@ def search(request):
     
     return render(request, 'produit/search.html', context)
 
-def tester(request):
+def paiement(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
     auth_token = "7e3a2f6d-e6b9-40ac-96bb-25f8488188df"
-    context = {"auth_token":auth_token}
+    context = {"cartItems":cartItems,"auth_token":auth_token}
     return render(request, 'produit/paiement.html', context)
 
 def recu(request):
@@ -256,10 +258,12 @@ def recu(request):
     return render(request, 'produit/recu.html', context)
 
 def commande(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
     client = request.user.utilisateur.client
     id = Commande.objects.latest('id').id
     commandes = Commande.objects.filter(client=client).exclude(transaction_id=None)
-    context = {"commandes": commandes}
+    context = {"cartItems":cartItems,"commandes": commandes}
     return render(request, 'produit/commande.html', context)
 
 

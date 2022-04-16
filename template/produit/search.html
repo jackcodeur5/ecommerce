@@ -27,12 +27,14 @@
                                     <div class="product-content">
                                         <h3><a href="{% url 'detail' produit.id %}" style="font-size: 20px;">{{produit.nom}}</a></h3>
                                         <div class="product-price">
-                                            <span style="font-size: 20px; font: weight 10px;">{{produit.prix_achat}} Fcfa</span>
+                                            <span style="font-size: 20px; font: weight 10px;">{{produit.prix_achat}} Fcfa</span><br>
+                                            <span class="mt-4" style="font-size: 20px; font: weight 10px; color: rgb(15, 65, 104);">Stock: {{produit.stock}}</span>
                                         </div>
                                     </div>
                                     <div class="product-content">
                                         <div class="product-price">
                                             <span>{{produit.description}} </span>
+                                            
                                         </div>
                                     </div>
                                     <a data-product="{{produit.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart mt-4"  ><i class="fa fa-plus" style="color:aliceblue">Add</i></a>

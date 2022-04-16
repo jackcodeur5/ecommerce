@@ -7,7 +7,7 @@ class Produit(models.Model):
     nom = models.CharField(max_length=200, null=True)
     description = models.CharField(max_length=200, null=True)
     prix_achat = models.FloatField()
-    remise = models.FloatField()
+    stock = models.IntegerField(default=0)
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
     vendeurs = models.ManyToManyField(Vendeur)
     #prix_livraison = models.FloatField()

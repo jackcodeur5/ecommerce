@@ -3,6 +3,11 @@ from . import views
 
 
 urlpatterns = [
+    path('index', views.index, name='index'),
+    path('home', views.home, name='home_vendeur'),
+    path('create', views.create, name='create_produit'),
+    path('vendeur', views.vendeur, name='vendeur'),
+
     path('allvendeur/', views.allVendeurs),
     path('getvendeur/<int:id>/', views.getVendeur),
     path('addvendeur/', views.addVendeur),

@@ -54,6 +54,10 @@
                                 
                                 <span>{{produit.prix_achat}} Fcfa</span>
                             </div>
+                            
+                        </div>
+                        <div class="product-action-2">
+                            <span style="font-weight: 20px;">Stock: {{produit.stock}} </span>
                         </div>
                     </div>
                     {% endfor %}
@@ -91,7 +95,8 @@
                                     <div class="product-content">
                                         <h3><a href="{% url 'detail' repassage.id %}" style="font-size: 20px;">{{repassage.nom}}</a></h3>
                                         <div class="product-price">
-                                            <span style="font-size: 20px; font: weight 10px;">{{repassage.prix_achat}} Fcfa</span>
+                                            <span style="font-size: 20px; font: weight 10px;">{{repassage.prix_achat}} Fcfa</span><br>
+                                            <span class="mt-4" style="font-size: 20px; font: weight 10px; color: rgb(15, 65, 104);">Stock: {{repassage.stock}}</span>
                                         </div>
                                     </div>
                                     <div class="product-content">

@@ -61,7 +61,7 @@ def inscription(request):
                 utilisateur.user = user 
                 utilisateur.save()
                 messages.success(request, 'Compte créer avec succèss')
-                return redirect('access')
+                return redirect('home')
         except:
             pass
         

@@ -10,14 +10,14 @@ urlpatterns = [
     path('update_items/', views.updateItems, name='update_items'),
     path('process_order/', views.processOrder, name='process_order'),
     path('test', views.test, name='test'),
-    path('tester', views.tester, name='tester'),
+    path('paiement', views.paiement, name='paiement'),
     path('contact', views.contact, name='contact'),
     path('apropos', views.apropos, name='apropos'),
     path('produits', views.produits, name='produits'),
     path('produits/', views.allProduit),
     path('categorie/<str:pk>/', views.categorie, name="categorie"),
     path('search', views.search, name="search"),
-    path('recu', views.recu, name="recu"),
+    path('recu', views.recu, name="recu_paiement"),
     path('commande', views.commande, name="commande")
     ]
 

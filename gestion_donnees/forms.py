@@ -30,6 +30,11 @@ class formProduit(forms.ModelForm):
         model = Produit
         fields = '__all__'
 
+class formProduitVendeur(forms.ModelForm):
+    class Meta:
+        model = Produit
+        exclude = ['vendeurs']
+
 class formCommande(forms.ModelForm):
     class Meta:
         model = Commande
