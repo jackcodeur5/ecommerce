@@ -28,6 +28,7 @@
                         
                         <th>Commande</th>
                         <th>Status</th>
+                        <th>Date de commande</th>
                         <th>Reçu</th>
                     </tr>
                 </thead>
@@ -38,6 +39,7 @@
                            <a href="# " title="voir detail">Commande#{{commande.transaction_id}}</a> 
                         </td>
                         <td class="align-middle">{{commande.etat_commande}}</td>
+                        <td class="align-middle">{{commande.date_creation}}</td>
                         
                         <td class="align-middle text-center">
                            <a href="{% url 'recu_pdf' commande.id %} "> <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">

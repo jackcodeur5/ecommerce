@@ -20,12 +20,14 @@
 <!-- End Breadcrumbs -->
         
 <!-- Shopping Cart -->
-<div class="shopping-cart section">
+<div class="shopping-cart section" >
     <div class="container">
         <div class="row">
             <div class=" col-md-12 col-12 col-xs-12">
                 <!-- Shopping Summery -->
+                {% if cartItems != 0 %}
                 <table class="table shopping-summery col-xs-10">
+                   
                     <thead>
                         <tr class="main-hading">
                             <th>PRODUIT</th>
@@ -36,24 +38,24 @@
                             
                         </tr>
                     </thead>
-                    {% if cartItems != 0 %}
+                   
                     <tbody>
                         {% for item in items %}
                         <tr>
-                            <td class="image" data-title="No"><img src="{{item.produit.image.url}}" alt="#"></td>
-                            <td class="product-des" data-title="Description">
+                            <td class="image" data-title="PRODUIT"><img src="{{item.produit.image.url}}" alt="#"></td>
+                            <td class="product-des" data-title="NOM">
                                 <p class="product-name"><a href="#">{{item.produit.nom}}</a></p>
    
                             </td>
-                            <td class="price" data-title="Price"><span>{{item.produit.prix_achat}} FCFA</span></td>
-                            <td class="qty" data-title="Qty"><!-- Input Order -->
+                            <td class="price" data-title="PRIX UNITAIRE"><span>{{item.produit.prix_achat}} FCFA</span></td>
+                            <td class="qty" data-title="QUANTITE"><!-- Input Order -->
                                 <div class="input-group">
                                     <div class="button minus">
                                         <button type="button" class="btn btn-primary  update-cart" data-product={{item.produit.id}} data-action = "remove"  >
                                             <i class="ti-minus"></i>
                                         </button>
                                     </div>
-                                    <div class="input-number">{{item.qte_produit}}</div>
+                                    <div class="input-number pt-2">{{item.qte_produit}}</div>
                                    
                                     <!-- <input type="text"  class="input-number"  value="{{item.qte_produit}}"> -->
                                     <div class="button plus">
@@ -77,7 +79,7 @@
                 <!--/ End Shopping Summery -->
             </div>
         </div>
-        <div class="row">
+        <div class="row" >
             <div class="col-12">
                 <!-- Total Amount -->
                 <div class="total-amount">
@@ -87,25 +89,27 @@
                             <div class="right">
                                 {% if cartItems != 0 %}
                                 <ul>
-                                    <li>Total produits<span>{{commande.get_cart_items}}</span></li>
+                                    <li>Total produits<span style="padding-right: 60px;">{{commande.get_cart_items}}</span></li>
                                     <li>Total<span>{{commande.get_cart_total}} FCFA</span></li>
                                     
                                 </ul>
                                 <div class="button5">
                                     {% if user.is_authenticated %}
-                                    <a href="{% url 'checkout' %}" class="btn">Continuer</a>
+                                    <a href="{% url 'checkout' %}" class="btn">Finaliser la commande</a>
                                     {% else %}
-                                    <a href="{% url 'inscription' %}" class="btn">Continuer</a>
+                                    <a href="{% url 'inscription' %}" class="btn">Finaliser la commande</a>
                                     {% endif %}
                                    
                                     <a href="{% url 'home' %}" class="btn">Continuer les Achats</a>
                                 </div>
                                 {% else %}
+
                                 <tbody >
                                     <tr>
                                         <div style="width: 40%; margin-left: 20%; text-align: center;">
                                             <td class="price" data-title="Price" >
-                                                <span style="font-size: 20px;">0 Produit</span>
+                                                <span style="font-size: 25px;">Votre panier est</span><br>
+                                                <span style="font-size: 25px;">Vide</span>
                                                  <p class="product-name" style="font-size: 20px;" ></p>
                     
                                              </td>
@@ -114,7 +118,7 @@
                                     </tr>
                                 </tbody>
                                 <div class="button5 " style="width: 40%; margin-left: 20%;">
-                                    <a href="{% url 'home' %}" class="btn">Effectuer vos Achats</a>
+                                    <a href="{% url 'home' %}" class="btn">Commencer vos Achats</a>
                                 </div>
                                 {% endif %}
                             </div>

@@ -40,6 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-12">
+                    
                     <!-- Logo -->
                     <div class="logo">
                         <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
@@ -110,7 +111,7 @@
                                 <div class="navbar-collapse">	
                                     <div class="nav-inner">	
                                         <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active ml-4" style="margin-left: -1px;"><a href="{% url 'home' %}">Accueil</a></li>
+                                                <li class=" ml-4" style="margin-left: -1px;"><a href="{% url 'home' %}">Accueil</a></li>
                                                 <li><a href="{% url 'produits' %}">Produit</a></li>
                                                 <!--												
                                                 </ul>
@@ -126,9 +127,9 @@
                                                         <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
                                                     </ul>
                                                 </li> -->
-                                                {% if user.is_authenticated %}
+                                               
                                                 <li><a href="{% url 'index' %}"> Vendeur</a></li>
-                                                {% endif %}
+                                             
                                                 <li><a href="{% url 'apropos' %}"> A propos</a></li>
                                                 
                                         </ul>

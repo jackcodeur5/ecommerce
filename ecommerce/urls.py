@@ -30,7 +30,7 @@ urlpatterns = [
     path('recu/', include('recu.urls')),
     path('utilisateur/', include('utilisateur.urls')),
     path('vendeur/', include('vendeur.urls')),
-    path('account/', include('accounts.urls')),
+    # path('account/', include('accounts.urls')),
     path('users-dashboard/', include('gestion_donnees.urls')),
     path('dashboard-site/', include('dashboard_site.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

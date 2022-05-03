@@ -9,7 +9,7 @@ class Produit(models.Model):
     prix_achat = models.FloatField()
     stock = models.IntegerField(default=0)
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
-    vendeurs = models.ManyToManyField(Vendeur)
+    vendeurs = models.ForeignKey(Vendeur, on_delete=models.CASCADE)
     #prix_livraison = models.FloatField()
     marque = models.CharField(max_length=200, null=True)
     image = models.FileField()

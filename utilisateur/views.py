@@ -57,9 +57,12 @@ def inscription(request):
                 user_save = form.cleaned_data.get('username')
                 utilisateur_save = form1.cleaned_data.get('nom')
                 user = User.objects.get(username=form.cleaned_data.get('username'))
+                password = User.objects.get(password=form.cleaned_data.get('password'))
                 utilisateur = Utilisateur.objects.get(nom=form1.cleaned_data.get('nom'))
                 utilisateur.user = user 
                 utilisateur.save()
+                user_auth = authenticate(request, username=user, password=password)
+                auth_login(request, user_auth)
                 messages.success(request, 'Compte créer avec succèss')
                 return redirect('home')
         except:

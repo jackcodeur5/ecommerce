@@ -52,8 +52,21 @@ function addCartItem(productId, action){
     
    
 	document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
-    location.reload()
+    // location.reload()
+    // window.reload()
+   if(window.location.href == "http://127.0.0.1:8000/panier/"){
+    location.reload() 
+    window.reload()
+ 
+
+   }else{
+    window.location.href = "panier/"
+    window.reload()
+    // alert(window.location.href);
+   }
     
+
+
     /*var path = location.pathname
         console.log(path)
         if(path == '/panier/'){

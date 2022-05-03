@@ -1,6 +1,19 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, officia distinctio commodi quibusdam dolorem sed suscipit blanditiis repellat, provident facere nisi laudantium molestias tempora culpa soluta, consectetur ut saepe ipsum!</p>
+        </div>
+        <div class="col-lg-4 col-md-10 col-sm-4 col-xs-8">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, officia distinctio commodi quibusdam dolorem sed suscipit blanditiis repellat, provident facere nisi laudantium molestias tempora culpa soluta, consectetur ut saepe ipsum!</p>
+              </div>
+
+    </div>
+
+</div>
+
 {% for categorie in categories %}
 <div class=" mt-4 mb-2">
     <div class="container">
@@ -26,7 +39,7 @@
                             </a>
                             
                         </div>
-                        <a data-product="{{produit.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart mt-4"  ><i class="fa fa-plus" style="color:aliceblue">Add</i></a>
+                 
                         <div class="product-content">
                             <h3><a href="{% url 'detail' produit.id %}" style="font-size: 20px;">{{produit.nom}}</a></h3>
                             <div class="product-price" >
@@ -40,7 +53,8 @@
                                 <span>{{produit.description}} </span>
                             </div>
                         </div>
-                        
+                        <a data-product="{{produit.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart mt-4"  ><i class="fa fa-plus" style="color:aliceblue; margin-right: 5px;"></i><span style="color: aliceblue;">Ajouter</span></a>
+                               
                     </div>
                    
                  

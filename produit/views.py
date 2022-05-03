@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+#from rest_framework.decorators import api_view
+#from rest_framework.response import Response
 from .serializers import ProduitSerializer
 from django.http import JsonResponse
 from django.db.models import Q
@@ -304,11 +304,11 @@ def commande(request):
 
 
  #API rest --------------------------------------------------------------------------------------->>
-@api_view(['GET'])
-def allProduit(request):
-    produits = Produit.objects.all()
-    serialization = ProduitSerializer(produits, many=True)
-    return Response(serialization.data)
+# @api_view(['GET'])
+# def allProduit(request):
+#     produits = Produit.objects.all()
+#     serialization = ProduitSerializer(produits, many=True)
+#     return Response(serialization.data)
 
 """@api_view(['GET'])
 def getProduit(request, id):

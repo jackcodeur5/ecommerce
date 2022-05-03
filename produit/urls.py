@@ -14,7 +14,6 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('apropos', views.apropos, name='apropos'),
     path('produits', views.produits, name='produits'),
-    path('produits/', views.allProduit),
     path('categorie/<str:pk>/', views.categorie, name="categorie"),
     path('search', views.search, name="search"),
     path('recu', views.recu, name="recu_paiement"),
@@ -27,5 +26,6 @@ urlpatterns = [
     path('addproduit/', views.addProduit),
     path('updateproduit/<int:id>/', views.updateProduit),
     path('deleteproduit/<int:id>/', views.deleteProduit),
+    path('produits/', views.allProduit),
 """
 

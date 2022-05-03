@@ -3,9 +3,10 @@ from . import views
 
 
 urlpatterns = [
-    path('allcategorie/', views.allCategories),
-    path('getcategorie/<int:id>/', views.getCategorie),
-    path('addcategorie/', views.addCategorie),
-    path('updatecategorie/<int:id>/', views.updateCategorie),
-    path('deletecategorie/<int:id>/', views.deleteCategorie),
+    
 ]
+# path('allcategorie/', views.allCategories),
+#     path('getcategorie/<int:id>/', views.getCategorie),
+#     path('addcategorie/', views.addCategorie),
+#     path('updatecategorie/<int:id>/', views.updateCategorie),
+#     path('deletecategorie/<int:id>/', views.deleteCategorie),
